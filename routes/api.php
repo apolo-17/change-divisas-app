@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::group([
-    //'middleware' => 'api',
+    'middleware' => 'api',
     'prefix' => 'v1/auth'
 
 ], function ($router) {
@@ -27,4 +27,4 @@ Route::group([
     Route::post('logout', [\App\Http\Controllers\Api\V1\AuthController::class, 'logout'])->name('logout');
     Route::post('refresh', [\App\Http\Controllers\Api\V1\AuthController::class, 'refresh'])->name('refresh');
     Route::post('me', [\App\Http\Controllers\Api\V1\AuthController::class, 'me'])->name('me');
-})->middleware('api');
+});
