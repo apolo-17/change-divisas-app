@@ -6,11 +6,11 @@ use App\Traits\UUID;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Establishment extends Model
 {
     use HasFactory, UUID;
 
-    protected $fillable = ['user_id', 'nationality', 'profession'];
+    protected $fillable = ['name_store', 'description', 'category_id'];
 
     public function user()
     {
